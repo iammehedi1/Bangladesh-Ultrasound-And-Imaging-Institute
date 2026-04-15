@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Bangladesh Ultrasound & Imaging Institute (BUII) - BTEB Approved Ultrasound Training Institute in Dhaka. CMU, DMU, ADMS courses available.">
+    <meta name="keywords"
+        content="ultrasound training, medical ultrasound course, CMU, DMU, ADMS, BTEB approved, Dhaka, Bangladesh, sonography course">
+    <title>BUII - Bangladesh Ultrasound & Imaging Institute | BTEB Approved</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1E3A8A;
+            --primary-light: #3B82F6;
+            --secondary: #047857;
+            --secondary-light: #10B981;
+            --accent: #DC2626;
+            --dark: #0F172A;
+            --gray: #64748B;
+            --light: #F8FAFC;
+            --white: #FFFFFF;
+            --gradient: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            --radius: 16px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--white);
+            color: var(--dark);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 0.75rem 1.5rem;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo-tagline {
+            font-size: 0.65rem;
+            color: var(--gray);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-cta {
+            background: var(--gradient);
+            color: white !important;
+            padding: 0.6rem 1.25rem;
+            border-radius: 50px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(30, 58, 138, 0.3);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 1);
+            z-index: 1001;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .mobile-menu.active {
+            display: flex;
+        }
+
+        .mobile-menu a {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark);
+            text-decoration: none;
+            padding: 0.75rem 2rem;
+            transition: var(--transition);
+        }
+
+        .mobile-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-menu .nav-cta {
+            background: var(--gradient);
+            color: white;
+            border-radius: 50px;
+            margin-top: 1rem;
+        }
+
+        .mobile-menu-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 1.5rem;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 6rem 0 4rem;
+            background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 50%, #F0FDF4 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 150%;
+            background: radial-gradient(circle, rgba(30, 58, 138, 0.05) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-text {
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            font-weight: 800;
+            line-height: 1.2;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .institute-code {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 500px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(30, 58, 138, 0.3);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--dark);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .btn-whatsapp:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .section-subtitle {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .course-card {
+            background: var(--light);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+            border-color: var(--primary);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: var(--primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .course-badge.popular {
+            background: var(--accent);
+        }
+
+        .course-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .course-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .course-full-name {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .course-meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.85rem;
+            color: var(--secondary);
+            font-weight: 500;
+        }
+
+        /* Admission Section */
+        .admission {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, #1E3A8A 0%, #047857 100%);
+            color: white;
+        }
+
+        .admission .section-title {
+            color: white;
+        }
+
+        .admission .section-subtitle {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .admission-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .admission-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius);
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .admission-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .admission-card ul {
+            list-style: none;
+        }
+
+        .admission-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .admission-card li::before {
+            content: '✓';
+            color: #10B981;
+            font-weight: bold;
+        }
+
+        .seats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            margin-top: 2rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        /* Why BUII */
+        .why-buii {
+            padding: 5rem 0;
+            background: var(--light);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--radius);
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-card p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+            padding: 1rem;
+            background: var(--light);
+            border-radius: 12px;
+            transition: var(--transition);
+        }
+
+        .contact-item:hover {
+            background: #E0F2FE;
+        }
+
+        .contact-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        .contact-details h4 {
+            font-size: 0.85rem;
+            color: var(--gray);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-details a,
+        .contact-details p {
+            color: var(--dark);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+        }
+
+        .contact-details a:hover {
+            color: var(--primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--light);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .map-container {
+            border-radius: var(--radius);
+            overflow: hidden;
+            height: 400px;
+            box-shadow: var(--shadow);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Director Section */
+        .director {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: var(--radius);
+            margin-top: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .director-avatar {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .director-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark);
+        }
+
+        .director-info p {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Mobile Call Button */
+        .mobile-call-btn {
+            display: none;
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            z-index: 1000;
+            background: var(--accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(220, 38, 38, 0.4);
+            text-decoration: none;
+            animation: pulse 2s infinite;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .hero-description {
+                margin: 0 auto 2rem;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 1.85rem;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+                max-width: 280px;
+            }
+
+            .mobile-call-btn {
+                display: flex;
+            }
+
+            .admission-content {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">
+                <img src="images/logo.jpg" alt="BUII Logo">
+                <div class="logo-text">
+                    <span class="logo-name">BUII</span>
+                    <span class="logo-tagline">Bangladesh Ultrasound & Imaging Institute</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#admission">Admission</a></li>
+                <li><a href="#why-buii">Why BUII</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="tel:+8801648160865" class="nav-cta">📞 Call Now</a></li>
+            </ul>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="mobile-menu-close" id="mobileMenuClose">✕</button>
+        <a href="#courses" class="mobile-nav-link">Courses</a>
+        <a href="#admission" class="mobile-nav-link">Admission</a>
+        <a href="#why-buii" class="mobile-nav-link">Why BUII</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+        <a href="tel:+8801648160865" class="nav-cta">📞 Call Now</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">✓ BTEB Approved • Institute Code: 50862</div>
+                    <h1>Ultrasound & Imaging <span>Training in Dhaka</span></h1>
+                    <p class="institute-code">Bangladesh Ultrasound & Imaging Institute (BUII)</p>
+                    <p class="hero-description">
+                        Bangladesh Technical Education Board (BTEB) approved institute offering professional
+                        medical ultrasound and imaging courses. Start your career in diagnostic sonography today.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="tel:+8801648160865" class="btn btn-primary">📞 Call 01648-160865</a>
+                        <a href="https://wa.me/8801648160865" class="btn btn-whatsapp" target="_blank">💬 WhatsApp</a>
+                        <a href="#courses" class="btn btn-secondary">View Courses</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="images/banner.jpg" alt="Ultrasound Training at BUII" loading="eager" width="1026"
+                        height="537" fetchpriority="high">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Courses</h2>
+                <p class="section-subtitle">Professional medical ultrasound and imaging courses approved by BTEB</p>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <span class="course-badge popular">Popular</span>
+                    <div class="course-icon">🔬</div>
+                    <h3>CMU</h3>
+                    <p class="course-full-name">Certificate in Medical Ultrasound</p>
+                    <div class="course-meta">
+                        <span>⏱️ 6 Months</span>
+                        <span>📅 Jan-June / July-Dec</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <span class="course-badge">Diploma</span>
+                    <div class="course-icon">🎓</div>
+                    <h3>DMU</h3>
+                    <p class="course-full-name">Diploma in Medical Ultrasound</p>
+                    <div class="course-meta">
+                        <span>⏱️ 12 Months</span>
+                        <span>🏆 Advanced</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">📋</div>
+                    <h3>ACMU</h3>
+                    <p class="course-full-name">Advanced Certificate in Medical Ultrasound</p>
+                    <div class="course-meta">
+                        <span>⏱️ 6 Months</span>
+                        <span>📈 Intermediate</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <span class="course-badge">Advanced</span>
+                    <div class="course-icon">🏅</div>
+                    <h3>ADMS</h3>
+                    <p class="course-full-name">Advanced Diploma in Medical Sonography</p>
+                    <div class="course-meta">
+                        <span>⏱️ 12 Months</span>
+                        <span>🏆 Professional</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-icon">❤️</div>
+                    <h3>ECG & X-ray</h3>
+                    <p class="course-full-name">ECG & X-ray Training Course</p>
+                    <div class="course-meta">
+                        <span>⏱️ 10 Days</span>
+                        <span>⚡ Intensive</span>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <span class="course-badge">International</span>
+                    <div class="course-icon">🌍</div>
+                    <h3>ARDMS Exam Prep</h3>
+                    <p class="course-full-name">American Registry of Diagnostic Medical Sonography Preparation</p>
+                    <div class="course-meta">
+                        <span>🇺🇸 USA Standard</span>
+                        <span>📜 Certification</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Admission Section -->
+    <section class="admission" id="admission">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Admission Information</h2>
+                <p class="section-subtitle">Join the next batch and start your career in medical imaging</p>
+            </div>
+            <div class="admission-content">
+                <div class="admission-card">
+                    <h3>📅 Batch Schedule</h3>
+                    <ul>
+                        <li>January - June Batch</li>
+                        <li>July - December Batch</li>
+                        <li>Admission Open Year-Round</li>
+                        <li>Flexible Timing Available</li>
+                    </ul>
+                </div>
+                <div class="admission-card">
+                    <h3>📋 Eligibility (CMU)</h3>
+                    <ul>
+                        <li>MBBS or Equivalent</li>
+                    </ul>
+                </div>
+                <div class="admission-card">
+                    <h3>📝 How to Apply</h3>
+                    <ul>
+                        <li>Contact via Hotline or WhatsApp</li>
+                        <li>Visit the Institute in Person</li>
+                        <li>Bring Original Certificates</li>
+                        <li>Complete Admission Form</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center;">
+                <div class="seats-badge">🔥 আসন সংখ্যা সীমিত — Seats Limited!</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why BUII -->
+    <section class="why-buii" id="why-buii">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose BUII?</h2>
+                <p class="section-subtitle">Quality education with practical training</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Experienced Instructors</h3>
+                    <p>Learn from qualified medical professionals with years of clinical experience</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Practical-Focused Training</h3>
+                    <p>Hands-on training with modern ultrasound equipment</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Lecture Sheets & Support</h3>
+                    <p>Comprehensive study materials and ongoing class support</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>Online + Offline Classes</h3>
+                    <p>Flexible learning options to suit your schedule</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✅</div>
+                    <h3>BTEB Approved</h3>
+                    <p>Recognized certification from Bangladesh Technical Education Board</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📍</div>
+                    <h3>Prime Location</h3>
+                    <p>Conveniently located near Mugda Medical College Hospital</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Get in touch for admission inquiries</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-details">
+                            <h4>Hotline</h4>
+                            <a href="tel:+8801648160865">01648-160865</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📱</div>
+                        <div class="contact-details">
+                            <h4>Secondary</h4>
+                            <a href="tel:+8801920801415">01920-801415</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📧</div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:buii2019@yahoo.com">buii2019@yahoo.com</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-details">
+                            <h4>Address</h4>
+                            <p>46, North Mugda, Dhaka-1214<br>Near the Mugda Medical College Hospital</p>
+                        </div>
+                    </div>
+
+                    <div class="social-links">
+                        <a href="https://facebook.com/buii2019" target="_blank" class="social-link"
+                            title="Facebook">📘</a>
+                        <a href="https://wa.me/8801648160865" target="_blank" class="social-link"
+                            title="WhatsApp">💬</a>
+                        <a href="mailto:dr.sayedahmedbd@gmail.com" class="social-link" title="Email Director">✉️</a>
+                        <a href="https://www.buiiultrasound.com" target="_blank" class="social-link"
+                            title="Website">🌐</a>
+                    </div>
+
+                    <div class="director">
+                        <div class="director-avatar">SA</div>
+                        <div class="director-info">
+                            <h4>Dr. Sayed Ahmed</h4>
+                            <p>Course Coordinator & Director</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3652.2137857393393!2d90.43019731498275!3d23.73917098458749!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b9b4e3c0f6e7%3A0x4e9c3e0a7c0a5f6e!2sMugda%20Medical%20College%20Hospital!5e0!3m2!1sen!2sbd!4v1707392400000!5m2!1sen!2sbd"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Bangladesh Ultrasound & Imaging Institute</h3>
+                    <p>BTEB Approved Institute (Code: 50862) offering professional medical ultrasound and imaging
+                        courses in Dhaka, Bangladesh. Start your career in diagnostic sonography with certified
+                        training.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#admission">Admission</a></li>
+                        <li><a href="#why-buii">Why BUII</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Courses</h4>
+                    <ul>
+                        <li><a href="#courses">CMU - 6 Months</a></li>
+                        <li><a href="#courses">DMU - 12 Months</a></li>
+                        <li><a href="#courses">ADMS - 12 Months</a></li>
+                        <li><a href="#courses">ECG & X-ray</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Bangladesh Ultrasound & Imaging Institute (BUII). All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Call Button -->
+    <a href="tel:+8801648160865" class="mobile-call-btn">📞</a>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuClose = document.getElementById('mobileMenuClose');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileMenuClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.1)';
+            } else {
+                navbar.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+
+</html>
